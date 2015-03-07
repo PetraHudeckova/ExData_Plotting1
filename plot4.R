@@ -13,13 +13,16 @@ myData <- filter(data, Date == "2007-02-01" | Date == "2007-02-02")
 #create datetime variable from Date and Time columns
 dateTime <- as.POSIXct(paste(myData$Date, myData$Time), format="%Y-%m-%d %H:%M:%S")
 
-png(filename="plot4.png")
+png(filename="plot4.png", type = "cairo-png")
 
 par(mfrow=c(2,2))
+
 #1st graph
 plot(y=myData$Global_active_power, x=dateTime, type="l", xlab="", ylab="Global Active Power")
+
 #2nd graph
 plot(y=myData$Voltage, x=dateTime, type="l", xlab="datetime" , ylab="Voltage")
+
 #3rd graph
 plot(y=myData$Sub_metering_1, x=dateTime, type="n", xlab="", ylab="Emergency sub metering")
 
