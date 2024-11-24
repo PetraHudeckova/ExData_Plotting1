@@ -2,6 +2,7 @@
 #unzip and place this script in the folder
 library(dplyr)
 
+
 #load data from file
 data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?", stringsAsFactors=FALSE)
 
